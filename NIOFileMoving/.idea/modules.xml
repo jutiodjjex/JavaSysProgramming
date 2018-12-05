@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NIOFileCopying.iml" filepath="$PROJECT_DIR$/NIOFileCopying.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NIOFileMoving.iml" filepath="$PROJECT_DIR$/NIOFileMoving.iml" />
     </modules>
   </component>
 </project>
