@@ -4,14 +4,17 @@ import java.io.*;
 import java.lang.String;
 
 public class ICopyResult extends Thread {
-    String source;
-    String destination;
+    private String source;
+    private String destination;
     ICopyResult(String name, String source, String destination) {
         setName(name);
         this.source = source;
         this.destination = destination;
     }
 
+    /**
+     * Копирование файлов.
+     */
     @Override
     public void run() {
 
@@ -37,6 +40,6 @@ public class ICopyResult extends Thread {
                 e.printStackTrace();
             }
         }
-        System.out.printf("Поток закончил копирование. \n");
+        System.out.println("Поток закончил копирование. \n");
     }
 }
