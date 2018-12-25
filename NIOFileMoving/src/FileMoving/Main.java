@@ -13,6 +13,8 @@ import java.lang.String;
  * и перемещение последних в другую заданную директорию.
  * Выводит кол-во перемещённых файлов.
  *
+ * Код выхода 1 - (Exit code 1) - Обозначает то, что программа выключилась при ошибке на стадии переноса файлов.
+ *
  * @author P.V.V. 16IT18K
  */
 
@@ -20,16 +22,12 @@ public class Main {
 
     private static Scanner scan = new Scanner(System.in);
     private static final String MOVE_INFORMATION_FILE = "C:\\Users\\PryaN\\IdeaProjects\\JavaSysProgramming\\NIOFileMoving\\src\\FileMoving\\MovedFiles.txt";
+    static private String sourceDirectory = "";
+    static private String destinationDirectory = "";
 
     public static void main(String[] args) {
 
-
-        System.out.println("Введите папку, из которой нужно скопировать файлы: ");
-        String sourceDirectory = scan.nextLine();
-
-        System.out.println("Введите папку, в которую нужно скопировать файлы: ");
-        String destinationDirectory = scan.nextLine();
-
+        innerJoin();
         fileMoving(sourceDirectory, destinationDirectory);
         movedFilesNotify();
 
@@ -57,6 +55,8 @@ public class Main {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Files are not found.");
+            System.exit(1);
         }
     }
 
@@ -127,6 +127,56 @@ public class Main {
         }
         catch(IOException e){
             System.out.println(e.getMessage());
+        }
+    }
+
+    /**
+     *
+     * Метод для ввода данных о местоположении папки с файлами и папки-приемника.
+     *
+     * Использует метод errorNotify() для выявления несуществующей папки.
+     *
+     */
+    static private void innerJoin() {
+        do {
+
+            errorNotify();
+
+            System.out.println("Введите папку, из которой нужно скопировать файлы: ");
+            sourceDirectory = scan.nextLine();
+
+
+            System.out.println("Введите папку, в которую нужно скопировать файлы: ");
+            destinationDirectory = scan.nextLine();
+
+        } while (!(ifExists(sourceDirectory) && ifExists(destinationDirectory)));
+    }
+
+    /**
+     *
+     * Метод для проверки того, существует ли введённый пользователем путь.
+     *
+     * @param existableDirectory - директория, подлежащая проверке.
+     *
+     */
+    static private boolean ifExists(String existableDirectory) {
+
+        boolean existsCheck = Files.exists(Paths.get(existableDirectory), LinkOption.NOFOLLOW_LINKS);
+        return existsCheck;
+    }
+
+    /**
+     *
+     * Метод для вывода ошибки о том, что введённая директория не найдена.
+     *
+     * Внутри метода используется метод ifExists() для проверки существования директории.
+     */
+    static private void errorNotify(){
+        if((!(ifExists(sourceDirectory))) && (sourceDirectory != ""))   {
+            System.out.println("Source directory is not exists. \n Try again.");
+        }
+        if ((!(ifExists(destinationDirectory))) && (destinationDirectory != "")) {
+            System.out.println("Destination directory is not exists. \n Try again.");
         }
     }
 }
