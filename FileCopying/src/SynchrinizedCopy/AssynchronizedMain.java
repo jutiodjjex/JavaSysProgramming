@@ -40,7 +40,7 @@ public class AssynchronizedMain {
      * @param info - Строковый массив для передачи пути-источника и пути-доставки.
      */
     private static void createNStart(String name, String[] info){
-        ICopyResult copy = new ICopyResult(name, info[0], info[1]);
+        CopyingThread copy = new CopyingThread(name, info[0], info[1]);
         copy.start();
     }
 

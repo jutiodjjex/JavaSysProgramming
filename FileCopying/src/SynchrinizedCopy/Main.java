@@ -38,13 +38,12 @@ public class Main {
      *
      * @param thread - поток для копирования файлов.
      */
-    private static void sync(ICopyResult thread){
+    private static void sync(CopyingThread thread){
         try {
             thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.printf("Поток %s закончил свою работу. \n", thread.getName());
     }
 
     /**
@@ -55,7 +54,7 @@ public class Main {
      * @param info - Строковый массив для передачи пути-источника и пути-доставки.
      */
     private static void createNStart(String name, String[] info){
-        ICopyResult copy = new ICopyResult(name, info[0], info[1]);
+        CopyingThread copy = new CopyingThread(name, info[0], info[1]);
         copy.start();
         sync(copy);
     }

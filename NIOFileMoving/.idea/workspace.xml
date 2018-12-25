@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FileMoving/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="117" column="32" lean-forward="true" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+            <state relative-caret-position="-2">
+              <caret line="101" column="12" lean-forward="true" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,6 +28,36 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/CopyingThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/AssynchronizedMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -49,9 +79,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/FileMoving/MovingClass.java" />
         <option value="$PROJECT_DIR$/src/FileMoving/DownloadingThread.java" />
-        <option value="$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/ICopyResult.java" />
         <option value="$PROJECT_DIR$/src/FileMoving/MovedFiles.txt" />
         <option value="$PROJECT_DIR$/src/FileMoving/Main.java" />
+        <option value="$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/ICopyResult.java" />
+        <option value="$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/AssynchronizedMain.java" />
+        <option value="$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/CopyingThread.java" />
+        <option value="$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/Main.java" />
       </list>
     </option>
   </component>
@@ -94,7 +127,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545756627424" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545757233094" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -180,19 +213,6 @@
     <entry file="file://$PROJECT_DIR$/../NIOFileCopying/src/FilesMoving/Main.java" />
     <entry file="file://$PROJECT_DIR$/../NIOFileCopying/src/FilesMoving/GetMatches.java" />
     <entry file="file://$PROJECT_DIR$/src/FileMoving/DownloadingThread.java" />
-    <entry file="file://$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/Main.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/ICopyResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../NIOTraining/src/Test4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -223,6 +243,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/FileMoving/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="101" column="12" lean-forward="true" selection-start-line="101" selection-start-column="12" selection-end-line="101" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FileMoving/MovedFiles.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -230,13 +260,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileMoving/Main.java">
+    <entry file="file://$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/CopyingThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="117" column="32" lean-forward="true" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+        <state relative-caret-position="306">
+          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FileCopying/src/SynchrinizedCopy/AssynchronizedMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
         </state>
       </provider>
     </entry>
