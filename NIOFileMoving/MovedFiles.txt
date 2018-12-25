@@ -1,0 +1,48 @@
+File "1.txt" 
+Was moved to "C:\Games\MovingTest" folder 
+
+File "2.txt" 
+Was moved to "C:\Games\MovingTest" folder 
+
+File "1.txt" 
+Was moved to "C:\Games\MovingTest" folder 
+
+File "2.txt" 
+Was moved to "C:\Games\MovingTest" folder 
+
+File "bitch.txt" 
+Was moved to "C:\Games" folder 
+
+File "dela.txt" 
+Was moved to "C:\Games" folder 
+
+File "kak.txt" 
+Was moved to "C:\Games" folder 
+
+File "privet.txt" 
+Was moved to "C:\Games" folder 
+
+File "bitch.txt" 
+Was moved to "C:\Games" folder 
+
+File "dela.txt" 
+Was moved to "C:\Games" folder 
+
+File "kak.txt" 
+Was moved to "C:\Games" folder 
+
+File "privet.txt" 
+Was moved to "C:\Games" folder 
+
+File "bitch.txt" 
+Was moved to "C:\Games" folder 
+
+File "dela.txt" 
+Was moved to "C:\Games" folder 
+
+File "kak.txt" 
+Was moved to "C:\Games" folder 
+
+File "privet.txt" 
+Was moved to "C:\Games" folder 
+
