@@ -19,6 +19,7 @@ import java.lang.String;
 public class Main {
 
     private static Scanner scan = new Scanner(System.in);
+    private static final String MOVE_INFORMATION_FILE = "C:\\Users\\PryaN\\IdeaProjects\\JavaSysProgramming\\NIOFileMoving\\src\\FileMoving\\MovedFiles.txt";
 
     public static void main(String[] args) {
 
@@ -59,8 +60,15 @@ public class Main {
         }
     }
 
+
+    /**
+     *
+     * Метод записывает имя перемещённого файла в .txt файл с данными о перемещенных файлах.
+     *
+     * @param nameOfTheTransferedFile - Строковое значение о имени перемещенного файла.
+     */
     static private void saveNameOfTransferedFile(String nameOfTheTransferedFile){
-        try(FileWriter writer = new FileWriter("C:\\Users\\PryaN\\IdeaProjects\\JavaSysProgramming\\NIOFileMoving\\src\\FileMoving\\MovedFiles.txt", true)) {
+        try(FileWriter writer = new FileWriter(MOVE_INFORMATION_FILE, true)) {
 
             writer.write(nameOfTheTransferedFile);
             writer.append('\n');
@@ -72,11 +80,21 @@ public class Main {
 
     }
 
+    /**
+     *
+     * Метод выводит информацию о перемещенных файлах:
+     * имена перемещенных файлов и кол-во перемещенных файлов.
+     *
+     * Метод вызывает другой метод countOfTransferedFiles() для того, чтобы сосчитать кол-во
+     * перемещенных файлов.
+     *
+     * Информация о перемещенных файлах берётся из .txt файла, в которую записывается информация о перемещении.
+     */
     static private void movedFilesNotify(){
 
         countOfTransferedFiles();
 
-        try(FileReader reader = new FileReader("C:\\Users\\PryaN\\IdeaProjects\\JavaSysProgramming\\NIOFileMoving\\src\\FileMoving\\MovedFiles.txt"))
+        try(FileReader reader = new FileReader(MOVE_INFORMATION_FILE))
         {
             int eachCharReader;
             while((eachCharReader = reader.read()) != -1){
@@ -88,10 +106,15 @@ public class Main {
         }
     }
 
+    /**
+     *
+     * Метод считает кол-во перемещенных файлов и записывает их в .txt файл
+     * с информацией о перемещенных файлах.
+     */
     static private void countOfTransferedFiles(){
         int filesMovedCount = 0;
-        try(FileReader reader = new FileReader("C:\\Users\\PryaN\\IdeaProjects\\JavaSysProgramming\\NIOFileMoving\\src\\FileMoving\\MovedFiles.txt");
-            FileWriter writer = new FileWriter("C:\\Users\\PryaN\\IdeaProjects\\JavaSysProgramming\\NIOFileMoving\\src\\FileMoving\\MovedFiles.txt", true))
+        try(FileReader reader = new FileReader(MOVE_INFORMATION_FILE);
+            FileWriter writer = new FileWriter(MOVE_INFORMATION_FILE, true))
         {
             int eachCharReader;
             while((eachCharReader = reader.read()) != -1){
