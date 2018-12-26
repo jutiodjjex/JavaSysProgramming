@@ -1,5 +1,0 @@
-File "zdarova.txt" was moved.
-File "dela.txt" was moved.
-File "kak.txt" was moved.
-File "privet.txt" was moved.
-Files moved: 4

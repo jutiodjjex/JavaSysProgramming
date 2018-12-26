@@ -1,4 +1,4 @@
-package FileMoving;
+package com.github.jutiodjjex;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -21,15 +21,14 @@ import java.lang.String;
 public class Main {
 
     private static Scanner scan = new Scanner(System.in);
-    private static final String MOVE_INFORMATION_FILE = "C:\\Users\\PryaN\\IdeaProjects\\JavaSysProgramming\\NIOFileMoving\\src\\FileMoving\\MovedFiles.txt";
-    static private String sourceDirectory = "";
-    static private String destinationDirectory = "";
+    private static final String MOVE_INFORMATION_FILE = "C:\\Users\\PryaN\\IdeaProjects\\NIOFileMoving\\src\\com\\github\\jutiodjjex\\MovedFiles.txt";
+    static private String[] pathsForTransfering = {"", ""};
 
     public static void main(String[] args) {
 
-        innerJoin();
-        fileMoving(sourceDirectory, destinationDirectory);
-        movedFilesNotify();
+        pathsEnterOneByOne();
+        fileMoving();
+        showInfoAboutMovedFiles();
 
     }
 
@@ -41,14 +40,11 @@ public class Main {
      * указанную в аргументе метода, при этом считая
      * кол-во перемещённых файлов, выводит имена перемещенных файлов.
      *
-     *
-     * @param srcDirectory - путь к директории, откуда копируются файлы.
-     * @param destDirectory - путь к директории, куда копируются файлы.
      */
-    static private void fileMoving(String srcDirectory, String destDirectory){
-        try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(srcDirectory))) {
+    static private void fileMoving(){
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(pathsForTransfering[0]))) {
             for (Path entry : stream) {
-                Files.move(entry, Paths.get(destDirectory + "\\" + entry.getFileName()));
+                Files.move(entry, Paths.get(pathsForTransfering[1] + "\\" + entry.getFileName()));
                 String transferedFileName = "File \"" + entry.getFileName() + "\" was moved.";
                 saveNameOfTransferedFile(transferedFileName);
 
@@ -90,7 +86,7 @@ public class Main {
      *
      * Информация о перемещенных файлах берётся из .txt файла, в которую записывается информация о перемещении.
      */
-    static private void movedFilesNotify(){
+    static private void showInfoAboutMovedFiles(){
 
         countOfTransferedFiles();
 
@@ -137,22 +133,18 @@ public class Main {
      *
      * Метод для ввода данных о местоположении папки с файлами и папки-приемника.
      *
-     * Использует метод errorNotify() для выявления несуществующей папки.
+     * Использует метод handlingEnteringData() для выявления несуществующей папки.
      *
      */
-    static private void innerJoin() {
-        do {
-
-            errorNotify();
-
-            System.out.println("Введите папку, из которой нужно скопировать файлы: ");
-            sourceDirectory = scan.nextLine();
-
-
-            System.out.println("Введите папку, в которую нужно скопировать файлы: ");
-            destinationDirectory = scan.nextLine();
-
-        } while (!(ifExists(sourceDirectory) && ifExists(destinationDirectory)));
+    static private void pathsEnterOneByOne() {
+        String[] folderRequest = {"из которой", "в которую"};
+        for (int i = 0; i <= 1; i++) {
+            do {
+                handlingEnteringData(pathsForTransfering[i]); //Проверяет наличие такой директории, в случае чего выдает ошибку
+                System.out.println("Введите папку, " + folderRequest[i] + " нужно переместить файлы: ");
+                pathsForTransfering[i] = scan.nextLine();
+            } while (!(ifExists(pathsForTransfering[i])));
+        }
     }
 
     /**
@@ -164,8 +156,8 @@ public class Main {
      */
     static private boolean ifExists(String existableDirectory) {
 
-        boolean existsCheck = Files.exists(Paths.get(existableDirectory), LinkOption.NOFOLLOW_LINKS);
-        return existsCheck;
+        return Files.exists(Paths.get(existableDirectory), LinkOption.NOFOLLOW_LINKS);
+
     }
 
     /**
@@ -174,13 +166,14 @@ public class Main {
      *
      * Внутри метода используется метод ifExists() для проверки существования директории.
      */
-    static private void errorNotify(){
-        if((!(ifExists(sourceDirectory))) && (sourceDirectory != ""))   {
-            System.out.println("Source directory is not exists. \n Try again.");
+    static private void handlingEnteringData(String enterDataArray){
+        System.out.println(enterDataArray);
+
+        if((!(ifExists(enterDataArray))) && (enterDataArray != "")){ //Если такая папка не существует и её путь не пустой - возвращается false.
+            System.out.println("This directory is not exists. \n Try again.");
         }
-        if ((!(ifExists(destinationDirectory))) && (destinationDirectory != "")) {
-            System.out.println("Destination directory is not exists. \n Try again.");
-        }
+
     }
 }
+
 
