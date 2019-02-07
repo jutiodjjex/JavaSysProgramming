@@ -1,0 +1,22 @@
+public class Chocolate{
+
+}
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        /comment
+
+        /* Fdfdsfgg$$$
+        * fdsfsdf
+        * 4235235fdfFDF324454444
+        */
+
+        int money = 524124    + 4234
+
+
+     ;
+        int
+        price = 0   ;
+        int scrap = 0;
+        int chocolate = 0;
+        int wrap = 0;

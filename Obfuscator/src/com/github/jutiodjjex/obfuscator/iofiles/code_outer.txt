@@ -1,0 +1,2 @@
+null
+public class PO{}public static void main(String[] args) {Scanner scan = new Scanner(System.in);int ZF =524124+4234;int QB = 0;int Xr = 0;int QO = 0;int Ud = 0;

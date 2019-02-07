@@ -1,0 +1,5 @@
+((public|private)?)+((\s*)?)+((static)?)+((\s*)?)+((final)?)+((\s*)?)+(class|int|String|long|boolean|byte|char|short|float|double|void)+(\s)+(\w*)+((\s)?)+(;|=|{)
+((=)+(.*)+(;))
+(\/+\*)+((?=((.|\n)?)+([\*]+[\/]))((.|\n)+\*+\/)|$)
+(\/{2})+.*
+\s+;+(((\s)?)*)
