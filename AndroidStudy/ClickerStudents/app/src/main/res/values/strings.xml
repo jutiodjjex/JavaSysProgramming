@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ClickerStudents</string>
+    <string name="text_progress">Until next progress bar upgrade: </string>
+</resources>
